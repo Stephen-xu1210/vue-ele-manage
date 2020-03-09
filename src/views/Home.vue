@@ -4,7 +4,7 @@
     <el-header>
       <div class="titleBox">
         <img src="../assets/logo.png" alt />
-        <span>仨傻帽后台管理系统</span>
+        <span>xx后台管理系统</span>
       </div>
       <span class="userinfo">欢迎您，亲爱的{{userName}}</span>
       <el-button class="exitBtn" type="info" @click="onExit">注销</el-button>
