@@ -7,7 +7,9 @@ import './assets/css/global.css'
 import axios from 'axios'
 
 Vue.use(ElementUI)
-axios.defaults.baseURL = 'https://www.fastmock.site/mock/ba39e57f31446dda02ba52022ff8241e/myManagement'
+// axios.defaults.baseURL = 'https://www.fastmock.site/mock/ba39e57f31446dda02ba52022ff8241e/myManagement'
+axios.defaults.baseURL = 'http://www.localhost:7001'
+
 Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false

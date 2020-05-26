@@ -6,6 +6,8 @@ import Users from '../views/Home/Users.vue'
 import Roles from '../views/Home/Roles.vue'
 import Auth from '../views/Home/Auth.vue'
 import Goods from '../views/Home/Goods.vue'
+import Counts from '../views/Home/Counts.vue'
+
 
 Vue.use(VueRouter)
 
@@ -14,6 +16,7 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home,
+    redirect:'/users',
     children:[
       {
         path:'/users',
@@ -30,6 +33,10 @@ const routes = [
       {
         path:'/goods',
         component:Goods
+      },
+      {
+        path:'/counts',
+        component:Counts
       }
     ]
   },
@@ -44,6 +51,7 @@ const router = new VueRouter({
   routes
 })
 
+//全局路由守卫（防止未登录用户进入Login页外的其他页面）
 router.beforeEach((to, from, next) => {
   if(to.path === '/login') return next()
     const localTokenId = window.sessionStorage.getItem('tokenid')

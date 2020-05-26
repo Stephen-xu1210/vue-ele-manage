@@ -131,9 +131,11 @@ export default {
             const { data } = res
             console.log(data)
             window.sessionStorage.setItem('tokenid',data.token)
+            window.sessionStorage.setItem('username',data.username)
             this.loading = false
             this.$router.push('/home')
           })  
+            
         }else{
           this.$message({
             type:'error',

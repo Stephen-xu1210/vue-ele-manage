@@ -4,7 +4,7 @@
     <el-header>
       <div class="titleBox">
         <img src="../assets/logo.png" alt />
-        <span>xx后台管理系统</span>
+        <span>鼎捷后台管理系统</span>
       </div>
       <span class="userinfo">欢迎您，亲爱的{{userName}}</span>
       <el-button class="exitBtn" type="info" @click="onExit">注销</el-button>
@@ -64,7 +64,7 @@
             <i class="el-icon-setting"></i>&emsp;
             <span slot="title">订单管理</span>
           </el-menu-item>
-          <el-menu-item index="5">
+          <el-menu-item index="/counts">
             <i class="el-icon-data-line"></i>&emsp;
             <span slot="title">数据统计</span>
           </el-menu-item>
@@ -174,6 +174,9 @@ export default {
       isCollapse:false,
       userName:''
     }
+  },
+  mounted() {
+    this.userName = window.sessionStorage.getItem('username');
   },
   methods: {
     // 退出事件
